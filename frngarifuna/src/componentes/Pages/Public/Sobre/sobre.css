@@ -1,0 +1,37 @@
+
+
+
+h2.titulo{
+color: white;
+border: 3px solid white;
+text-align: center;
+font-size: 22px;
+font-weight: normal;
+padding: 10px;
+margin: 5px;
+display: inline-block;
+font-size: 26px;
+transform: translate(340%, -600%);
+}
+
+.container22 {
+  position: absolute;
+  font-weight: black;
+  height: 300px;
+  width: 600px;
+  top: 350px;
+  left: calc(50% -200px);
+  transform: translate(88%, 30%);
+  display: flex;
+}
+
+.container2 {
+  position: absolute;
+  font-weight: black;
+  height: 300px;
+  width: 600px;
+  top: 350px;
+  left: calc(50% -200px);
+  transform: translate(88%, 70%);
+  display: flex;
+}

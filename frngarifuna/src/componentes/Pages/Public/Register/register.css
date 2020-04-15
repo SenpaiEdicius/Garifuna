@@ -1,0 +1,9 @@
+
+.container55 {
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  top: 350px;
+  transform: translate(20%, 30%);
+  display: flex;
+}

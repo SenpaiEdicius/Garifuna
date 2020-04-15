@@ -1,0 +1,101 @@
+
+page-landing{
+  background-color: black;
+}
+
+h2.JIJIJIJ{
+color: white;
+border: 3px solid white;
+text-align: center;
+font-size: 22px;
+font-weight: normal;
+padding: 10px;
+margin: 5px;
+display: inline-block;
+font-size: 26px;
+transform: translate(440%, -600%)
+}
+
+
+h2.col-s-12-3 {
+  color: white;
+  border: 3px solid black;
+  text-align: center;
+  font-size: 22px;
+  font-weight: normal;
+  padding: 20px;
+  margin: 10px;
+  display: inline-block;
+  font-size: 26px;
+  position: absolute;
+  transform: translate(800%, -110%)
+}
+
+
+h2.col-s-1
+{
+  color: black;
+  border: 3px solid black;
+  text-align: center;
+  font-size: 22px;
+  font-weight: normal;
+  padding: 10px;
+  margin: 10px;
+
+  height: 1em;
+  width: 10em;
+  position: relative;
+  margin: 1em;
+
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -660%);
+}
+
+h3.definicion{
+  color: Black;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 20px;
+  margin: 10px;
+  display: inline-block;
+  position: absolute;
+  transform: translate(115%, -500%)
+}
+h3.definicion1{
+  color: Black;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 20px;
+  margin: 10px;
+  display: inline-block;
+  position: absolute;
+  transform: translate(85%, -450%)
+}
+h3.definicion2{
+  color: Black;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 20px;
+  margin: 10px;
+  display: inline-block;
+  position: absolute;
+  transform: translate(70%, -400%)
+}
+
+
+h2.pupu
+{
+  color: black;
+  border: 3px solid black;
+  text-align: center;
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  transform: translate(550%, -280%);
+}
