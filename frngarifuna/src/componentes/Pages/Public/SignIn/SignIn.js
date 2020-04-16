@@ -107,7 +107,7 @@ export default class Login extends Component {
 
   render() {
     if (this.state.redirecTo){
-      return (<Redirect to='/' />);
+      return (<Redirect to='/login' />);
     }
     return (
       <Page pageTitle="Nueva Cuenta" auth={this.props.auth}>

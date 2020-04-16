@@ -22,13 +22,14 @@ passport.use(
   )
 )
 
-
 function initApi(db){
 
     /// Routers de Entidades
     var seguridadRouter = require('./seguridad/seguridad')(db);
+    var pageRouter = require('./page/page')(db);
 
     router.use('/seguridad', seguridadRouter);
+    router.use('/page', pageRouter);
 
     var jwtAuthMiddleware = passport.authenticate('jwt',{session:false});
 

@@ -34,7 +34,6 @@ module.exports = (db)=>{
     userEmail: "",
     userPswd: "",
     userCompleteName: "",
-    userAdmin: "",
     userCourse: "",
     userSubscription: "",
     userDateCreated: null

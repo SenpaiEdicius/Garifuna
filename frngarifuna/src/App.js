@@ -38,6 +38,7 @@ class App extends Component{
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
   }
+  
   login(user){
     const {jwt, ...fuser} = user;
     this.setState({
@@ -66,6 +67,7 @@ class App extends Component{
       jwt:''
     });
   }
+
   render(){
     const auth = {
       isLogged:this.state.isLogged,
