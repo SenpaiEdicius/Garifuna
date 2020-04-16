@@ -5,6 +5,7 @@ import { Actions } from '../../../Forms/Buttons/Button';
 import { emailRegex, emptyRegex } from '../../../Forms/Validators/Validators';
 import { Link } from 'react-router-dom'; 
 import {paxios} from '../../../Utilities/Utilities';
+import {Redirect} from 'react-router-dom';
 
 export default class Login extends Component {
   /*
@@ -21,15 +22,17 @@ export default class Login extends Component {
       email: '',
       emailError: null,
       password: '',
-      passwordError: null
+      passwordError: null,
+      redirecTo:false
     }
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onClickLogin = this.onClickLogin.bind(this);
     this.onClickCreateAccount = this.onClickCreateAccount.bind(this);
     this.validate = this.validate.bind(this);
   }
+
   validate(state) {
-    let nameErrors = null;
+    let nameErrors = false;
     let tmpErrors = [];
     const { email, password } = state;
     if (email !== undefined) {
@@ -88,7 +91,7 @@ export default class Login extends Component {
         }
       )
         .then((resp) => {
-          console.log(resp);
+            this.setState({redirecTo: true });
         })
         .catch((error) => {
           console.log(error);
@@ -103,6 +106,9 @@ export default class Login extends Component {
   }
 
   render() {
+    if (this.state.redirecTo){
+      return (<Redirect to='/' />);
+    }
     return (
       <Page pageTitle="Nueva Cuenta" auth={this.props.auth}>
         <h1 className="center">Crear Nueva Cuenta</h1>
@@ -131,7 +137,7 @@ export default class Login extends Component {
           error={this.state.passwordError}
         />
         <Actions>
-          <button onClick={this.onClickCreateAccount}>Crear</button>
+          <button className="button-3 col-s-12" type="button" onClick={this.onClickCreateAccount}>Crear</button>
           <button><Link to="/login">Iniciar Sesión</Link></button>
         </Actions>
       </Page>

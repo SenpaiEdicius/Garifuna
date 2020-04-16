@@ -1,9 +1,8 @@
-
-
-header
-  {
+header{
     text-align: center;
     list-style-type: none;
+    max-width: 100%;
+    overflow-x: hidden;
     width:100vw;
     height: 100vh;
   	background-image:
@@ -16,10 +15,9 @@ background-size: cover;
 background-position: top;
 position: relative;
 clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 50%);
+}
 
-  }
-
-  ul li{
+ul li{
   font-weight: bold;
   background-color: antiquewhite;
   border-radius: 25px;
@@ -35,9 +33,7 @@ clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 50%);
   -webkit-box-shadow: 9px 4px 5px 0px rgba(83,86,87,1);
   -moz-box-shadow: 9px 4px 5px 0px rgba(83,86,87,1);
   box-shadow: 9px 4px 5px 0px rgba(83,86,87,1);
-  }
-
-
+}
 
 a{
     text-decoration: none;

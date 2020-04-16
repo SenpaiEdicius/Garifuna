@@ -80,7 +80,7 @@ class App extends Component{
         <Switch>
           <Route render={(props) => { return (<Home {...props} auth={auth} />) }} path="/" exact />
           <Route render={(props) => { return (<Login {...props} auth={auth} login={this.login} />)}} path="/login" exact/>
-          <Route render={(props) => { return (<Signin {...props} auth={auth} login={this.login} />)}} path="/signin" exact/>
+          <Route render={(props) => { return (<Signin {...props} auth={auth}/>) }} path="/signin" exact />
           <Route render={(props) => { return (<Courses {...props} auth={auth} />) }} path="/courses" exact/>
           <Route render={(props) => { return (<Subscription {...props} auth={auth} />) }} path="/subscription" exact/>
           <Route render={(props) => { return (<Register {...props} auth={auth}/>) }} path="/register:id" component={Register}  exact/>

@@ -26,9 +26,9 @@ passport.use(
 function initApi(db){
 
     /// Routers de Entidades
-    var adminRouter = require('./admin/admin')(db);
+    var seguridadRouter = require('./seguridad/seguridad')(db);
 
-    router.use('/admin', adminRouter);
+    router.use('/seguridad', seguridadRouter);
 
     var jwtAuthMiddleware = passport.authenticate('jwt',{session:false});
 

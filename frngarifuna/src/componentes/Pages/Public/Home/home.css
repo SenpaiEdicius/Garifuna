@@ -1,3 +1,10 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 
 page-landing{
   background-color: black;
@@ -99,3 +106,4 @@ h2.pupu
   position: absolute;
   transform: translate(550%, -280%);
 }
+

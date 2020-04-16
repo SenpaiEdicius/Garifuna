@@ -7,6 +7,7 @@ import {emailRegex , emptyRegex} from '../../../Forms/Validators/Validators';
 import { Link } from 'react-router-dom';
 import {paxios, setLocalStorage} from '../../../Utilities/Utilities';
 import {Redirect} from 'react-router-dom';
+
 export default class Login extends Component{
 
   /*
@@ -32,7 +33,7 @@ export default class Login extends Component{
   }
 
   validate(state){
-    let nameErrors = null;
+    let nameErrors = false;
     let tmpErrors = [];
     const {email, password} = state;
     if(email !== undefined){
@@ -57,6 +58,7 @@ export default class Login extends Component{
     }
       return nameErrors;
   }
+
   onChangeHandler(e){
     const  {name, value} = e.currentTarget;
     // Aqui puedo validar datos y establecer elementos de error.
@@ -70,6 +72,7 @@ export default class Login extends Component{
       ...errors
     });
   }
+  
   onClickLogin(e){
     e.preventDefault();
     e.stopPropagation();
@@ -79,7 +82,7 @@ export default class Login extends Component{
       this.setState({...this.state, ...errors});
     } else {
         //Aplicar Axios
-        alert(JSON.stringify(this.state));
+        //alert(JSON.stringify(this.state));
         const {email, password} = this.state;
         paxios.post(
           "/api/seguridad/login",
@@ -91,14 +94,19 @@ export default class Login extends Component{
         .then((resp)=>{
           console.log(resp.data);
           // Componente de Orden Superior los Datos del Usuario
-          this.props.login(resp.data);
-          this.setState({...this.state, redirecTo: true })
+          if(resp.data.msg){
+            alert(resp.data.msg);
+          }else{
+            this.props.login(resp.data);
+            this.setState({...this.state, redirecTo: true });
+          }
         })
         .catch((error)=>{
           console.log(error);
         })
     }
   }
+
   onClickCreateAccount(e){
     e.preventDefault();
     e.stopPropagation();
@@ -111,9 +119,9 @@ export default class Login extends Component{
       return (<Redirect to={redirect} />);
     }
     return (
-      <Page pageTitle="Iniciar" auth={this.props.auth}>
+      <Page pageTitle="Login" auth={this.props.auth}>
         <h1 className="center">Iniciar Sesión</h1>
-<div className="jeje">
+        <div className="jeje">
         <Field
           name="email"
           caption="Correo"
@@ -136,12 +144,6 @@ export default class Login extends Component{
         </Actions>
         </div>
       </Page>
-
-
-
-
-
-
     );
   }
 }
