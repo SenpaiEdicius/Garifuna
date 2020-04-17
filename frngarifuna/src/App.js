@@ -12,12 +12,6 @@ import Register from './componentes/Pages/Public/Register/Register';
 import Signin from './componentes/Pages/Public/SignIn/SignIn';
 import Sobre from './componentes/Pages/Public/Sobre/Sobre';
 
-import CreateCourse from './componentes/Pages/Private/Admin/Courses/Create';
-import UpdateCourse from './componentes/Pages/Private/Admin/Courses/Update';
-import DeleteCourse from './componentes/Pages/Private/Admin/Courses/Delete';
-import AddPayment from './componentes/Pages/Private/Admin/Payment/AddPayment';
-import UpdatePayment from './componentes/Pages/Private/Admin/Payment/UpdatePayment';
-import DeletePayment from './componentes/Pages/Private/Admin/Payment/DeletePayment';
 import UpdateUser from './componentes/Pages/Private/User/UpdateUser';
 import User from './componentes/Pages/Private/User/User';
 
@@ -88,12 +82,6 @@ class App extends Component{
           <Route render={(props) => { return (<Register {...props} auth={auth}/>) }} path="/register:id" component={Register}  exact/>
           <Route render={(props) => { return (<Sobre {...props} auth={auth} />) }} path="/sobre" exact/>
 
-          <PrivateRoute component={CreateCourse} path="/create" exact auth={auth}/>
-          <PrivateRoute component={UpdateCourse} path="/update:id" exact auth={auth}/>
-          <PrivateRoute component={DeleteCourse} path="/delete:id" exact auth={auth}/>
-          <PrivateRoute component={AddPayment} path="/addpayment" exact auth={auth}/>
-          <PrivateRoute component={UpdatePayment} path="/updatepayment:id" exact auth={auth}/>
-          <PrivateRoute component={DeletePayment} path="/deletepayment:id" exact auth={auth}/>
           <PrivateRoute component={UpdateUser} path="/updateuser:id" exact auth={auth}/>
           <PrivateRoute component={User} path="/user:id" exact auth={auth}/>
         </Switch>

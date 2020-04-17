@@ -42,7 +42,7 @@ export default class User extends Component {
 
  loadMore(page){
     const items  = this.state.itemsToLoad;
-    const uri = `/api/client/${page}/${items}`;
+    const uri = `/api/seguridad/${page}/${items}`;
     paxios.get(uri)
       .then(
         ({data})=>{

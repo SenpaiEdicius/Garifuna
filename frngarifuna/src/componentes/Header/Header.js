@@ -29,7 +29,7 @@ export default class Header extends Component{
                     <li><Link to="/courses">Cursos</Link></li>
                     <li><Link to="/subscription">Subscripciones</Link></li>
                     <li><Link to="/sobre">Sobre Nosotros</Link></li>
-                    <li><Link to="/user">Mi Perfil</Link></li>
+                    <li><Link to={`/user/${this.props.auth}`}>Mi Perfil</Link></li>
                     <li><a onClick={this.logoutOnClick}><Link>Cerrar Sesión</Link></a></li>
                 </ul>
             </header>

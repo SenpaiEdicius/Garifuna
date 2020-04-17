@@ -26,10 +26,10 @@ function initApi(db){
 
     /// Routers de Entidades
     var seguridadRouter = require('./seguridad/seguridad')(db);
-    var pageRouter = require('./page/page')(db);
+    var coursesRouter = require('./courses/courses')(db);
 
     router.use('/seguridad', seguridadRouter);
-    router.use('/page', pageRouter);
+    router.use('/courses', coursesRouter);
 
     var jwtAuthMiddleware = passport.authenticate('jwt',{session:false});
 
