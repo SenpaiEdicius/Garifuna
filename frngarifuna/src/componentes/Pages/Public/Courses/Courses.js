@@ -47,7 +47,7 @@ export default class Courses extends Component {
   render() {
   const uiItems = this.state.items.map(
     (item)=>{
-      return (
+      return ( // edita esto
         <div className="col-s-1" key={item._id}>
           <h1 className="main-color">{item.sku} </h1>
           <h3>{item.DescCorta}</h3>
@@ -55,12 +55,12 @@ export default class Courses extends Component {
           <span className='updateListItem'>
           </span>
         </div>);
-    }
+    } //hasta aki
   );
 
   if (!uiItems.length) uiItems.push(
     <div className="listItem" key="pbListAddOne">
-      <span>Nuevo Item</span>
+      <span>No hay cursos disponibles</span>
     </div>);
 
   return (

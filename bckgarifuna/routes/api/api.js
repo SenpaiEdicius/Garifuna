@@ -27,9 +27,11 @@ function initApi(db){
     /// Routers de Entidades
     var seguridadRouter = require('./seguridad/seguridad')(db);
     var coursesRouter = require('./courses/courses')(db);
+    var subscriptionsRouter = require('./subscriptions/subscriptions')(db);
 
     router.use('/seguridad', seguridadRouter);
     router.use('/courses', coursesRouter);
+    router.use('/subscriptions', subscriptionsRouter);
 
     var jwtAuthMiddleware = passport.authenticate('jwt',{session:false});
 

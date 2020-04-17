@@ -79,11 +79,11 @@ class App extends Component{
           <Route render={(props) => { return (<Signin {...props} auth={auth}/>) }} path="/signin" exact />
           <Route render={(props) => { return (<Courses {...props} auth={auth} />) }} path="/courses" exact/>
           <Route render={(props) => { return (<Subscription {...props} auth={auth} />) }} path="/subscription" exact/>
-          <Route render={(props) => { return (<Register {...props} auth={auth}/>) }} path="/register:id" component={Register}  exact/>
+          <Route render={(props) => { return (<Register {...props} auth={auth}/>) }} path="/register/:id" exact/>
           <Route render={(props) => { return (<Sobre {...props} auth={auth} />) }} path="/sobre" exact/>
 
           <PrivateRoute component={UpdateUser} path="/updateuser:id" exact auth={auth}/>
-          <PrivateRoute component={User} path="/user:id" exact auth={auth}/>
+          <PrivateRoute component={User} path="/user/:id" exact auth={auth}/>
         </Switch>
       </Router>
       );  

@@ -18,7 +18,7 @@ export default class Header extends Component{
         this.props.auth.logout();
     }
 
-    render(){
+    render(){    
         if(this.props.auth && this.props.auth.isLogged && true){
             return(
                 <header className="col-s-12">
@@ -29,7 +29,6 @@ export default class Header extends Component{
                     <li><Link to="/courses">Cursos</Link></li>
                     <li><Link to="/subscription">Subscripciones</Link></li>
                     <li><Link to="/sobre">Sobre Nosotros</Link></li>
-                    <li><Link to={`/user/${this.props.auth}`}>Mi Perfil</Link></li>
                     <li><a onClick={this.logoutOnClick}><Link>Cerrar Sesión</Link></a></li>
                 </ul>
             </header>

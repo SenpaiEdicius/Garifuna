@@ -29,12 +29,14 @@ function initApp(db){
   var apiRouter = require('./routes/api/api')(db);
   var apiSeguridad = require('./routes/api/seguridad/seguridad')(db);
   var apiCourses = require('./routes/api/courses/courses')(db);
+  var apiSubscriptions = require('./routes/api/subscriptions/subscriptions')(db);
 
   //app.use('/index', indexRouter);
   //app.use('/users', usersRouter);
   app.use('/api', apiRouter);
   app.use('/seguridad', apiSeguridad);
   app.use('/courses', apiCourses);
+  app.use('/subscriptions', apiSubscriptions);
 
   app.get('/*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
