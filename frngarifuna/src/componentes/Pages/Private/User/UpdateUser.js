@@ -38,7 +38,7 @@ export default class User extends Component {
       })
       .catch((err) => {
         console.log(err);
-      });
+      }); 
   }
 
   validate(state) {
