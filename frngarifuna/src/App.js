@@ -14,7 +14,6 @@ import Sobre from './componentes/Pages/Public/Sobre/Sobre';
 
 import User from './componentes/Pages/Private/User/User';
 import UpdateUser from './componentes/Pages/Private/User/UpdateUser';
-import UserDetails from './componentes/Pages/Private/User/UserDetails';
 
 class App extends Component{
   constructor(){

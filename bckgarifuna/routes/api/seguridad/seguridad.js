@@ -78,6 +78,25 @@ router.put('/users/upd/:id', (req, res)=>{
   });// update
 });
 
+//payment
+router.put('/users/payment/:id', (req, res)=>{
+  var id = req.params.id;
+  var data = {
+    "_id": id,
+    ...req.body
+  };
+
+  //var updUser = userModel.update( id, req.body);
+  userModel.payment(data, (err, updatedDoc)=>{
+    if(err){
+      console.log(err);
+      return res.status(500).json({"error":"error"});
+    }
+    return res.status(200).json(updatedDoc);
+  });// update
+});
+
+
 
 router.delete('/users/del/:id', (req, res)=>{
   var id = req.params.id;

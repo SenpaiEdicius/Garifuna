@@ -36,6 +36,7 @@ module.exports = (db)=>{
     userCompleteName: "",
     userCourse: "",
     userSubscription: "",
+    userCard: "",
     userDateCreated: null
   }
 
@@ -93,6 +94,36 @@ module.exports = (db)=>{
       }
     );// updateOne
   }
+
+  seguridadModel.payment = ( dataToUpdate , handler )=>{
+    var { _id, usernames, course, sub, card} = dataToUpdate;
+    var query = { "_id": new ObjectID(_id)};
+    var updateCommad = {
+      "$set":{
+        userCompleteName: usernames,
+        userCourse: course,
+        userSubscription: sub,
+        userCard: card,
+        lastUpdated: new Date().getTime()
+      },
+      "$inc" :{
+        "updates": 1
+      }
+    };
+
+    seguridadCollection.paymentOne(
+      query,
+      updateCommad,
+      (err, rslt)=>{
+        if(err){
+          return handler(err, null);
+        }
+        return handler(null, rslt.result);
+      }
+    );// updateOne
+  }
+
+
 
   seguridadModel.deleteByCode = (id, handler)=>{
     var query = {"_id": new ObjectID(id)};
