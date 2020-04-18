@@ -69,11 +69,11 @@ module.exports = (db)=>{
   }
 
   seguridadModel.update = ( dataToUpdate , handler )=>{
-    var { _id, userpswd, usernames} = dataToUpdate;
+    var { _id, email, usernames} = dataToUpdate;
     var query = { "_id": new ObjectID(_id)};
     var updateCommad = {
       "$set":{
-        userPswd: pswdGenerator(userpswd),
+        userEmail: email,
         userCompleteName: usernames,
         lastUpdated: new Date().getTime()
       },

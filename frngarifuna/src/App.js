@@ -12,8 +12,9 @@ import Register from './componentes/Pages/Public/Register/Register';
 import Signin from './componentes/Pages/Public/SignIn/SignIn';
 import Sobre from './componentes/Pages/Public/Sobre/Sobre';
 
-import UpdateUser from './componentes/Pages/Private/User/UpdateUser';
 import User from './componentes/Pages/Private/User/User';
+import UpdateUser from './componentes/Pages/Private/User/UpdateUser';
+import UserDetails from './componentes/Pages/Private/User/UserDetails';
 
 class App extends Component{
   constructor(){
@@ -82,8 +83,8 @@ class App extends Component{
           <Route render={(props) => { return (<Register {...props} auth={auth}/>) }} path="/register/:id" exact/>
           <Route render={(props) => { return (<Sobre {...props} auth={auth} />) }} path="/sobre" exact/>
 
-          <PrivateRoute component={UpdateUser} path="/updateuser:id" exact auth={auth}/>
-          <PrivateRoute component={User} path="/user/:id" exact auth={auth}/>
+          <PrivateRoute component={User} path="/user" exact auth={auth}/>
+          <PrivateRoute component={UpdateUser} path="/updateuser/:id" exact auth={auth}/>
         </Switch>
       </Router>
       );  
