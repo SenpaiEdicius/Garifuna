@@ -30,9 +30,30 @@ label{
 }
 
 @media screen and (max-width: 768px) {
-    label{
+     label{
         font-size:16px;
         position: relative;
         left: -110px;
     }
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  border: none;
+  padding: 1em 1em;
+}
+
+fieldset button {
+  border-radius: 25px;
+  background-color: antiquewhite;
+  font-size: 1em;
+  padding: 1em 1em;
+  width: 50%;
+  margin-bottom: 0.25em;
+  font-weight: 500;
+  outline: 0;
 }

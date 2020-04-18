@@ -1,3 +1,4 @@
+import './courses.css';
 import  React, { Component } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import {Link} from 'react-router-dom';
@@ -45,16 +46,19 @@ export default class Courses extends Component {
   }
 
   render() {
+
   const uiItems = this.state.items.map(
     (item)=>{
       return ( // edita esto
-        <div className="col-s-1" key={item._id}>
+
+        <div className="col-s-1235" key={item._id}>
           <h1 className="main-color">{item.sku} </h1>
           <h3>{item.DescCorta}</h3>
           <span>{item.DescLong}</span>
           <span className='updateListItem'>
           </span>
-        </div>);
+        </div>
+      );
     } //hasta aki
   );
 
@@ -65,7 +69,8 @@ export default class Courses extends Component {
 
   return (
     <Page pageTitle="Courses" auth={this.props.auth}>
-      <div className="list" ref={(ref)=> this.scrollParentRef = ref}>
+      <h2 className="titulo1">Cursos</h2>
+    <div className="list" ref={(ref)=> this.scrollParentRef = ref}>
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMore}

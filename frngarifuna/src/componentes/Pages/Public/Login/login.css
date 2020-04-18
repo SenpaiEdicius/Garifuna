@@ -1,25 +1,14 @@
 body {
   max-width: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
 }
 
-h1.center{
-  color: white;
-  border: 3px solid white;
-  text-align: center;
-  font-size: 22px;
-  font-weight: normal;
-  padding: 10px;
-  margin: 5px;
-  display: inline-block;
-  font-size: 26px;
-  transform: translate(370%, -600%)
-  }
+
 
 .jeje{
-  transform: translate(1%, -100%)
+  transform: translate(25%, -100%)
 }

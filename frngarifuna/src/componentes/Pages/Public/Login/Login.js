@@ -72,7 +72,7 @@ export default class Login extends Component{
       ...errors
     });
   }
-  
+
   onClickLogin(e){
     e.preventDefault();
     e.stopPropagation();
@@ -120,8 +120,9 @@ export default class Login extends Component{
     }
     return (
       <Page pageTitle="Login" auth={this.props.auth}>
-        <h1 className="center">Iniciar Sesión</h1>
+        <h2 className="titulo1">Iniciar Sesion</h2>
         <div className="jeje">
+
         <Field
           name="email"
           caption="Correo"
@@ -130,6 +131,7 @@ export default class Login extends Component{
           onChange={this.onChangeHandler}
           error={this.state.emailError}
         />
+    
         <Field
           name="password"
           caption="Contraseña"

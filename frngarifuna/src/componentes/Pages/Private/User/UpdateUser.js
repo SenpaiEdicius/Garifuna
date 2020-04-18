@@ -1,5 +1,6 @@
 //ARREGLAR ESTO
-
+import './updateuser.css';
+import {Actions} from '../../../Forms/Buttons/Button';
 import React, { Component } from "react";
 import Page from "../../Page";
 import Input from "../../../Forms/Input/Input";
@@ -109,11 +110,12 @@ export default class User extends Component {
   }
 
   render() {
-    const action ="Actualizando Usuario";
+
     const formContent = [
+
       <Input
         name="name"
-        caption="Nombre Completo"
+        label="Nombre Completo"
         value={this.state.name}
         onChange={this.onChangeHandler}
         error={this.state.nameError}
@@ -121,7 +123,7 @@ export default class User extends Component {
       />,
       <Input
         name="email"
-        caption="Email"
+        label="Email"
         value={this.state.email}
         onChange={this.onChangeHandler}
         error={this.state.emailError}
@@ -133,13 +135,16 @@ export default class User extends Component {
         pageURL="Modificar Usuario"
         auth={this.props.auth}
       >
+        <h2 className="titulo1">Cambiar Info</h2>
+          <div className="jeje">
         <Form
-          title={action}
+
           id="form-update-user"
           content={formContent}
           redirect="/"
           onClick={this.onClickUpdate}
         />
+        </div>
       </Page>
     );
   }

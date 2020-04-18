@@ -1,9 +1,10 @@
+import './signin.css';
 import React, { Component } from 'react';
 import Page from '../../Page';
 import Field from '../../../Forms/Fields/Field';
 import { Actions } from '../../../Forms/Buttons/Button';
 import { emailRegex, emptyRegex } from '../../../Forms/Validators/Validators';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import {paxios} from '../../../Utilities/Utilities';
 import {Redirect} from 'react-router-dom';
 
@@ -12,7 +13,7 @@ export default class Login extends Component {
   1) Capturar los eventos de los botones
   2) Repasar el evento para capturar los datos del formulario
   3) Validaciones de Datos y como desplegarlo en el componente
-  4) Usar axios para llegar al API. 
+  4) Usar axios para llegar al API.
    */
   constructor() {
     super();
@@ -57,7 +58,7 @@ export default class Login extends Component {
     }
     return nameErrors;
   }
-  
+
   onChangeHandler(e) {
     const { name, value } = e.currentTarget;
     // Aqui puedo validar datos y establecer elementos de error.
@@ -111,7 +112,8 @@ export default class Login extends Component {
     }
     return (
       <Page pageTitle="Nueva Cuenta" auth={this.props.auth}>
-        <h1 className="center">Crear Nueva Cuenta</h1>
+        <h2 className="titulo1">Crear Nueva Cuenta</h2>
+          <div className="jaja">
         <Field
           name="userName"
           caption="Nombre Completo"
@@ -140,7 +142,9 @@ export default class Login extends Component {
           <button className="button-3 col-s-12" type="button" onClick={this.onClickCreateAccount}>Crear</button>
           <button><Link to="/login">Iniciar Sesión</Link></button>
         </Actions>
+        </div>
       </Page>
+
     );
   }
 }
