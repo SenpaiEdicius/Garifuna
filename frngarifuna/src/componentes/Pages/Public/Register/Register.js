@@ -1,5 +1,6 @@
 //ARREGLAR ESTO
 
+import './register.css';
 import React, { Component } from "react";
 import Page from "../../Page";
 import CreditCardInput from 'react-credit-card-input';
@@ -113,7 +114,7 @@ export default class Register extends Component {
   }
 
   render() {
-    const action ="Efectuando Pago";
+  /*  const action ="   Efectuando Pago";*/
     const selectItems = [
       { value: "N/A", dsc: "N/A" },
       { value: "Curso Garifuna Nivel Principiante", dsc: "Curso Garifuna Nivel Principiante" },
@@ -158,13 +159,16 @@ export default class Register extends Component {
     if (this.props.auth && this.props.auth.isLogged && true){
       return (
         <Page pageTitle="Registro" auth={this.props.auth}>
+        <h2 className="titulo1">Registrar</h2>
+          <div className="jeje2">
         <Form
-            title={action}
+          /*  title={action} */
             id="form-payment-user"
             content={formContent}
             redirect="/"
             onClick={this.onClickUpdate}
           />
+            </div>
       </Page>
       );
     } else {

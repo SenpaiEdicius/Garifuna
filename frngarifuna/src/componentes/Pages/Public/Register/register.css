@@ -1,9 +1,10 @@
 
-.container55 {
-  position: absolute;
-  height: 300px;
-  width: 600px;
-  top: 350px;
-  transform: translate(20%, 30%);
+
+.jeje2{
+  height: 10em;
   display: flex;
+  align-items: center;
+  justify-content: center ;
+  transform: translate(0%, -120%);
+
 }
